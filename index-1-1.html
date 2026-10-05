@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of Unnati Srivastav — Bachelor of Business Administration student.">
+    <title>Unnati Srivastav | BBA Portfolio</title>
+
+    <style>
+        /* ===================================================
+           COLOR & THEME SETTINGS
+        =================================================== */
+         :root {
+            --background: #fff7fb;
+            --primary-text: #3b2631;
+            --secondary-text: #795f6c;
+            --border: #f2d8e5;
+            --skill-bg: #ffe7f1;
+            --accent: #e78bb2;
+            --accent-dark: #c85f8e;
+            --nav-height: 70px;
+        }
+
+        /* ===================================================
+           DESIGN ENGINE
+        =================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter",
+                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--primary-text);
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* ===================================================
+           NAVBAR
+        =================================================== */
+        .nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -1.5px;
+            text-decoration: none;
+            color: var(--primary-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-text);
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-text);
+        }
+
+        /* ===================================================
+           HERO
+        =================================================== */
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 0 80px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 20px;
+            object-fit: cover;
+            filter: none;
+            transition: all 0.4s ease;
+            border: 1px solid var(--border);
+        }
+
+        .profile-img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -4px;
+            line-height: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--secondary-text);
+            max-width: 500px;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-links a {
+            color: var(--primary-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-bottom: 1px solid var(--primary-text);
+            padding-bottom: 2px;
+            transition: opacity 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* ===================================================
+           CONTENT SECTIONS
+        =================================================== */
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 40px;
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--secondary-text);
+            padding-top: 5px;
+        }
+
+        .content-block {
+            margin-bottom: 48px;
+        }
+
+        .content-block:last-child {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .sub-heading {
+            font-weight: 600;
+            color: var(--primary-text);
+            margin-bottom: 8px;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .date {
+            color: var(--secondary-text);
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            display: block;
+            font-weight: 500;
+        }
+
+        p {
+            color: var(--secondary-text);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 20px;
+            color: var(--secondary-text);
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--primary-text);
+            font-weight: bold;
+        }
+
+        /* ===================================================
+           SKILLS
+        =================================================== */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-left: 0;
+        }
+
+        .skills-grid li {
+            background: var(--skill-bg);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: var(--primary-text);
+            font-weight: 600;
+            border: 1px solid transparent;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .skills-grid li::before {
+            content: "";
+            padding: 0;
+        }
+
+        .skills-grid li:hover {
+            border-color: #ddd;
+            transform: translateY(-2px);
+        }
+
+        /* ===================================================
+           FOOTER
+        =================================================== */
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 0;
+            color: var(--secondary-text);
+            font-size: 12px;
+            text-align: left;
+        }
+
+        footer p {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        /* ===================================================
+           MOBILE RESPONSIVE
+        =================================================== */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 16px;
+            }
+
+            .nav-container {
+                padding: 0 4px;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: left;
+                padding: 60px 0;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+                letter-spacing: -2px;
+            }
+
+            .tagline {
+                font-size: 1.05rem;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 20px;
+            }
+
+            section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 50px 0;
+            }
+
+            h2 {
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                height: 62px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a:nth-child(3) {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2.35rem;
+            }
+
+            .contact-links {
+                gap: 14px;
+            }
+        }
+
+        .nav-logo, h1 { color: var(--accent-dark); }
+        .nav { background: rgba(255, 247, 251, 0.92); }
+        .profile-img {
+            border: 5px solid #ffffff;
+            box-shadow: 0 12px 35px rgba(200, 95, 142, 0.16);
+        }
+        .skills-grid li {
+            background: var(--skill-bg);
+            border-color: #f7c9dc;
+        }
+        .contact-links a {
+            border-bottom-color: var(--accent);
+        }
+    
+        .workshop-proof {
+            margin-top: 22px;
+            padding: 16px;
+            background: #fff7fb;
+            border: 1px solid #f3c7dc;
+            border-radius: 14px;
+        }
+        .workshop-proof-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #b85a86;
+        }
+        .workshop-proof p {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        .certificate-img {
+            width: 100%;
+            max-width: 680px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            border: 1px solid #ead0dd;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================================================
+         NAVIGATION
+    =================================================== -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Unnati.</a>
+
+            <div class="nav-links">
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================================================
+         HERO SECTION
+    =================================================== -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Unnati<br>Srivastav</h1>
+
+            <p class="tagline">
+                BBA student who enjoys learning, communicating with people, and building practical skills. I am currently exploring new opportunities to learn and grow.
+            </p>
+
+            <div class="contact-links">
+                <a href="mailto:Unnatisrivastava1712@gmail.com">Unnatisrivastava1712@gmail.com</a>
+                <a href="https://www.linkedin.com/in/unnati-srivastav-256208424" id="linkedin-link" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+            </div>
+        </div>
+
+        <img
+            src="profile-1.jpg"
+            alt="Unnati Srivastav"
+            class="profile-img"
+        >
+    </header>
+
+    <!-- ===================================================
+         EXPERIENCE
+    =================================================== -->
+    <section id="experience">
+        <h2>Experience</h2>
+
+        <div class="content-wrapper">
+            <div class="content-block">
+                <h3>Portfolio Workshop</h3>
+                <div class="sub-heading">Workshop / Learning Experience</div>
+                <div class="date">Completed</div>
+                <p>
+                    Successfully participated in a Portfolio Development Workshop and learned how to
+                    develop and present a modern, visually engaging portfolio.
+                </p>
+                <ul>
+                    <li>Learned portfolio design, presentation, and user-experience basics.</li>
+                    <li>Practiced presenting skills and projects in a clear and engaging way.</li>
+                </ul>
+
+                <div class="workshop-proof">
+                    <div class="workshop-proof-title">Workshop Certificate</div>
+                    <p>Certificate of Participation — Portfolio Development Workshop</p>
+                    <img
+                        src="certificate-1.png"
+                        alt="Portfolio Development Workshop certificate for Unnati Srivastav"
+                        class="certificate-img"
+                    >
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>Currently Seeking Opportunities</h3>
+                <div class="sub-heading">Student / Beginner</div>
+                <p>
+                    I am currently building my skills through academic learning,
+                    workshops, and practical projects. I am open to learning and
+                    gaining real-world experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         EDUCATION
+    =================================================== -->
+    <section id="education">
+        <h2>Education</h2>
+
+        <div class="content-wrapper">
+            <div class="content-block">
+                <h3>Bachelor of Business Administration</h3>
+                <div class="sub-heading">BBA Student</div>
+                <div class="date">Currently Pursuing</div>
+                <p>
+                    Building a foundation in business, management, communication,
+                    and practical professional skills.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         PROJECTS
+    =================================================== -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="content-wrapper">
+            <div class="content-block">
+                <h3>Personal Portfolio</h3>
+                <p>
+                    A personal portfolio website created to showcase my education,
+                    skills, workshop experience, and future projects.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Academic & Learning Work</h3>
+                <p>
+                    Developing practical knowledge through BBA coursework,
+                    presentations, assignments, and skill-building activities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         SKILLS
+    =================================================== -->
+    <section id="skills">
+        <h2>Skills</h2>
+
+        <div class="content-wrapper">
+            <ul class="skills-grid">
+                <li>Communication</li>
+                <li>Verbal Communication</li>
+                <li>Active Listening</li>
+                <li>Teamwork</li>
+                <li>Presentation Basics</li>
+                <li>MS Excel — Beginner</li>
+                <li>MS Word — Basic</li>
+                <li>PowerPoint — Basic</li>
+                <li>Professional Portfolio Basics</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         FOOTER
+    =================================================== -->
+    <footer>
+        <p>&copy; 2026 Unnati Srivastav. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
